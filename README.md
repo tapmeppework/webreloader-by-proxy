@@ -100,4 +100,4 @@ $ npm start [__TARGET__]
 
 
 ---
-### t@pm3pp3 w0rk - Patrick Meppe (16.01.2025)
+### tapmeppe work - Patrick Meppe (16.01.2025)
