@@ -34,13 +34,13 @@ First some definitions.
 3. Run the following commands:
 	 1. If the **root** is **already** using GIT
 		```ps
-		$ git submodule add -- https://github.com/tapmeppework/webreloader.git webreloader
+		$ git submodule add -- https://github.com/tapmeppe/webreloader.git webreloader
 		$ cd webreloader
 		$ npm install
 		```
 	 2. Otherwise
 		```ps
-		$ git clone https://github.com/tapmeppework/webreloader.git webreloader
+		$ git clone https://github.com/tapmeppe/webreloader.git webreloader
 		$ cd webreloader
 		$ npm install
 		```
