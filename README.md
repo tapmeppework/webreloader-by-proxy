@@ -1,4 +1,4 @@
-# WebReloader
+# WebReloader by Proxy
 
 ## Introduction
 This project can be used to hot-reload any non static web application during the development stage. 
@@ -46,7 +46,7 @@ First some definitions.
 		```
 
 ### Manually
-1. [Download the webreloader project as a .zip file](https://github.com/tapmeppe/webreloader/archive/refs/heads/main.zip).
+1. [Download the webreloader project as a .zip file](https://github.com/tapmeppe/webreloader-by-proxy/archive/refs/heads/main.zip).
 2. Extract the .zip file. The result will be a single **non-empty** folder.
 3. Rename the newly created folder to '**webreloader**'.
 4. Move the folder *webreloader/* to your web application. Place it directly under the **root**.
@@ -100,7 +100,3 @@ To start a given mirror run the following command:
 cd $root/webreloader
 npm start [__TARGET__]
 ```
-
-
----
-### tapmeppe work - Patrick Meppe (27.03.2026)
