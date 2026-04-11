@@ -1,5 +1,6 @@
 # WebReloader by Proxy
 
+
 ## Introduction
 This project can be used to hot-reload any non static web application during the development stage. 
 For example applications written in PHP such as WordPress, Joomla and PrestaShop.<br>
@@ -8,7 +9,7 @@ This is done by **mirroring** the web application in 3 main steps:
 2. The base directory of the web application is **watched**.
 3. Once a modification is detected in the base directory, the proxy is reloaded.
 
-It is based on [browser-sync](https://browsersync.io/).
+The hot-reload is inspired by [vite](https://vite.dev/) and implemented thanks to [BrowserSync](https://browsersync.io/).
 
 
 ## Requirements
@@ -22,7 +23,7 @@ npm --version
 
 ## Installation
 First some definitions.
-1. **root**: The directory containing your web application.
+1. **root**: The directory containing your web application locally.
 2. **webreloader**: The directory containing the code in charge of the hot-reload. Aka this project.
 
 ### Using Git (recommended)
@@ -31,16 +32,16 @@ First some definitions.
 	 ```shell
 	 cd $root
 	 ```
-3. Run the following commands:
+3. Download the repository by running the following commands:
 	 1. If the **root** is already a GIT repository.
 		```shell
-		git submodule add -- https://github.com/tapmeppe/webreloader.git webreloader
+		git submodule add -- https://github.com/tapmeppe/webreloader-by-proxy.git webreloader
 		cd webreloader
 		npm install
 		```
 	 2. Otherwise
 		```shell
-		git clone https://github.com/tapmeppe/webreloader.git webreloader
+		git clone https://github.com/tapmeppe/webreloader-by-proxy.git webreloader
 		cd webreloader
 		npm install
 		```
@@ -49,7 +50,7 @@ First some definitions.
 1. [Download the webreloader project as a .zip file](https://github.com/tapmeppe/webreloader-by-proxy/archive/refs/heads/main.zip).
 2. Extract the .zip file. The result will be a single **non-empty** folder.
 3. Rename the newly created folder to '**webreloader**'.
-4. Move the folder *webreloader/* to your web application. Place it directly under the **root**.
+4. Move the folder *webreloader/* to the **root**. Meaning place it directly under the **root**.
 5. Run the following commands:
 	 ```shell
 	 cd $root/webreloader
@@ -94,9 +95,10 @@ Each node in the config file represents a **mirror**. Each **mirror** can be des
 	- The __PORT__ is optional and used to set a specific proxy port.
 
 
-## Start a mirror
-To start a given mirror run the following command:
+## Start
+To start a given mirror, run the following command:
 ```shell
 cd $root/webreloader
 npm start [__TARGET__]
 ```
+The proxy will then open in your (default) web browser.
