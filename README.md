@@ -14,9 +14,9 @@ It is based on [browser-sync](https://browsersync.io/).
 ## Requirements
 You need to have [Node.js and npm](https://nodejs.org/) installed on your pc.
 To make sure they are available run the following commands:
-```ps
-$ node --version
-$ npm --version
+```shell
+node --version
+npm --version
 ```
 
 
@@ -28,39 +28,42 @@ First some definitions.
 ### Using Git (recommended)
 1. Open your console.
 2. Navigate to the **root**.
-	 ```ps
-	 $ cd __PATH_TO_ROOT__
+	 ```shell
+	 cd $root
 	 ```
 3. Run the following commands:
-	 1. If the **root** is **already** using GIT
-		```ps
-		$ git submodule add -- https://github.com/tapmeppe/webreloader.git webreloader
-		$ cd webreloader
-		$ npm install
+	 1. If the **root** is already a GIT repository.
+		```shell
+		git submodule add -- https://github.com/tapmeppe/webreloader.git webreloader
+		cd webreloader
+		npm install
 		```
 	 2. Otherwise
-		```ps
-		$ git clone https://github.com/tapmeppe/webreloader.git webreloader
-		$ cd webreloader
-		$ npm install
+		```shell
+		git clone https://github.com/tapmeppe/webreloader.git webreloader
+		cd webreloader
+		npm install
 		```
 
 ### Manually
 1. [Download the webreloader project as a .zip file](https://github.com/tapmeppe/webreloader/archive/refs/heads/main.zip).
 2. Extract the .zip file. The result will be a single **non-empty** folder.
 3. Rename the newly created folder to '**webreloader**'.
-4. Move the folder 'webreloader' to your web application. Place it directly under the **root**.
+4. Move the folder *webreloader/* to your web application. Place it directly under the **root**.
 5. Run the following commands:
-	 ```ps
-	 $ cd __PATH_TO_ROOT__/webreloader
-	 $ npm install
+	 ```shell
+	 cd $root/webreloader
+	 npm install
 	 ```
 
 
 ## Configuration
-Create a file named '**config.json**', then paste the content of the file 'config.template.json' in the newly create file.<br>
-Each node in the config file represents a **mirror**.
-Each **mirror** can be described with the following information:
+Move to the **webreloader** folder and copy the file `config.template.json` to `config.json`.
+```shell
+cd $root/webreloader
+cp config.template.json config.json
+```
+Each node in the config file represents a **mirror**. Each **mirror** can be described with the following information:
 - Mandatory
 	- The __TARGET__: The key used as parameter to identify the mirror to load.
 	- The __URL__ to be proxied.
@@ -93,11 +96,11 @@ Each **mirror** can be described with the following information:
 
 ## Start a mirror
 To start a given mirror run the following command:
-```ps
-$ cd __PATH_TO_ROOT__/webreloader
-$ npm start [__TARGET__]
+```shell
+cd $root/webreloader
+npm start [__TARGET__]
 ```
 
 
 ---
-### tapmeppe work - Patrick Meppe (16.01.2025)
+### tapmeppe work - Patrick Meppe (27.03.2026)
