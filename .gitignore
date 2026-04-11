@@ -1,7 +1,7 @@
 # PM (xx.12.2024)
 
 # project
-/config.json
+/configuration.json
 
 # miscellaneous
 .DS_Store*

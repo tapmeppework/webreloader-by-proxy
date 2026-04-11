@@ -1,22 +1,22 @@
 {
-	"name": "@tapmeppe/webreloader",
-  "version": "0.5.2",
-  "description": "This project can be used to hot-reload any web application written in PHP during the development stage.",
-  "main": "main.js",
+	"name": "@tapmeppe/webreloader-by-proxy",
+  "version": "0.6.0",
+  "description": "This project can be used to hot-reload any non static web application during the development stage. For example applications written in PHP such as WordPress, Joomla and PrestaShop.",
+  "main": "starter.js",
   "scripts": {
-		"test": "cls && npx gulp",
-		"start": "node main.js"
+    "dev": "cls && node starter.js",
+		"start": "node starter.js",
+		"test": "cls && npx gulp"
   },
   "keywords": [
     "tapmeppe",
     "tapmeppework",
-    "hotreload",
-    "hotreloading",
+    "hot-reload",
 		"nodejs",
 		"php"
   ],
   "author": "Patrick Meppe (patrick.meppe@tapmeppe.work)",
-  "license": "tapmeppe license",
+  "license": "GNU General Public License v3.0",
   "dependencies": {
 		"browser-sync": "^3.0.3"
   },

@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * @see https://www.barrykooij.com/live-reloading-for-wordpress-development/
  * @see https://browsersync.io/docs
@@ -13,7 +14,7 @@ const
 
 // configuration
 const
-	file = 'config.json',
+	file = 'configuration.json',
 	root = path.dirname(__dirname),
 	path0 = path.resolve(__dirname, file),
 	self = __dirname.replace(/\\/g, '/')
@@ -21,7 +22,7 @@ if (fs.statSync(path0).isFile()) {
 	const configuration = JSON.parse(fs.readFileSync(path0, 'utf8'))
 	let [, , target] = process.argv
 	/**
-	 * @type {{url: string, dir: string, browser: string}}
+	 * @type {{browser: string, delay?: number, directory: string, files?: string[], ignore?: string[], port?: number, start?: string, url: string, }}
 	 */
 	let config = configuration[target]
 	if (!config) {
@@ -35,11 +36,14 @@ if (fs.statSync(path0).isFile()) {
 	}
 	// ...
 	if (config) {
+		/**
+		 * @type {import('browser-sync').Options}
+		 */
 		const configuration = {
 			logPrefix: target,
 			proxy: config.url,
 			// cwd: config.dir, // TODO remove - used during the initial development
-			cwd: path.resolve(root, config.dir ?? ''),
+			cwd: path.resolve(root, config.directory ?? ''),
 			// port: config.port || 9033, // Using a custom port leads to an unpleasant delay between switches
 			files: [
 				// '**/*.*',
@@ -51,11 +55,12 @@ if (fs.statSync(path0).isFile()) {
 				'**/*.jpeg',
 				'**/*.jpg',
 				'**/*.js',
-				// '**/*.json',
-				// '**/*.mp3',
-				// '**/*.mp4',
+				'**/*.json',
+				'**/*.mp3',
+				'**/*.mp4',
 				'**/*.php',
 				'**/*.png',
+				'**/*.svg',
 				'**/*.webp',
 				// '!*.css.map',
 				// '!*.less',
@@ -67,6 +72,7 @@ if (fs.statSync(path0).isFile()) {
 				...(config.files ?? []),
 			],
 			ignore: [
+				`${root}/configuration*.json`,
 				`${self}/*`,
 				// '*.css.map',
 				// '*.less',
@@ -85,8 +91,11 @@ if (fs.statSync(path0).isFile()) {
 		if (config.start) configuration.startPath = config.start
 		if (config.browser) configuration.browser = config.browser
 
-		let error = undefined
-		let start = end = 0
+		let
+			/** @type {Error|undefined|unknown} */
+			error = undefined,
+			start = 0,
+			end = 0
 		do {
 			error = undefined
 			start = Date.now()
@@ -105,6 +114,7 @@ if (fs.statSync(path0).isFile()) {
 		// ...
 		if (error) {
 			if (error instanceof Error) throw error
+			// @ts-ignore
 			else throw new Error(error)
 		}
 	}

@@ -31,26 +31,26 @@ set "TAPMEPPE_SCRIPT=%~n0%~x0"
 %TAPMEPPE_DIRECTORY:~0,2% && CD "%TAPMEPPE_DIRECTORY%"
 
 @REM set the console tile
-title "t@pm3pp3 w0rk -- WebReloader"
+title "tapmeppe work - WebReloader"
 
-if "%1" EQU "config" (
-	echo [36mt@pm3pp3 w0rk -- CONFIGURATION[0m
-	if not exist config.json (
-		if exist config.template.json (
+if "%1" EQU "configuration" (
+	echo [36mtapmeppe work - CONFIGURATION[0m
+	if not exist configuration.json (
+		if exist configuration.template.json (
 			@REM Install the missing modules
 			npm install
 
-			copy config.template.json config.json
-			if %ERRORLEVEL% EQU 0 code config.json
+			copy configuration.template.json configuration.json
+			if %ERRORLEVEL% EQU 0 code configuration.json
 		) else (
-			echo [31mThe config.template.json could NOT be found.[0m
+			echo [31mThe configuration.template.json could NOT be found.[0m
 		)
 	) else (
-		@REM the config file exists already
-		code config.json
+		@REM the configuration file exists already
+		code configuration.json
 	)
 	goto :eof
 )
 
-echo [36mt@pm3pp3 w0rk -- %1[0m
+echo [36mtapmeppe work - %1[0m
 npm start %1

@@ -23,8 +23,8 @@ npm --version
 
 ## Installation
 First some definitions.
-1. **root**: The directory containing your web application locally.
-2. **webreloader**: The directory containing the code in charge of the hot-reload. Aka this project.
+1. **webreloader**: The directory containing the code in charge of the hot-reload locally. Aka this project.
+2. **root**: The parent directory of the *webreloader* project locally. And the directory containing your web application locally.
 
 ### Using Git (recommended)
 1. Open your console.
@@ -34,17 +34,17 @@ First some definitions.
 	 ```
 3. Download the repository by running the following commands:
 	 1. If the **root** is already a GIT repository.
-		```shell
-		git submodule add -- https://github.com/tapmeppe/webreloader-by-proxy.git webreloader
-		cd webreloader
-		npm install
-		```
+			```shell
+			git submodule add -- https://github.com/tapmeppe/webreloader-by-proxy.git webreloader
+			cd webreloader
+			npm install
+			```
 	 2. Otherwise
-		```shell
-		git clone https://github.com/tapmeppe/webreloader-by-proxy.git webreloader
-		cd webreloader
-		npm install
-		```
+			```shell
+			git clone https://github.com/tapmeppe/webreloader-by-proxy.git webreloader
+			cd webreloader
+			npm install
+			```
 
 ### Manually
 1. [Download the webreloader project as a .zip file](https://github.com/tapmeppe/webreloader-by-proxy/archive/refs/heads/main.zip).
@@ -59,17 +59,17 @@ First some definitions.
 
 
 ## Configuration
-Move to the **webreloader** folder and copy the file `config.template.json` to `config.json`.
+Move to the **webreloader** folder and copy the file `configuration.template.json` to `configuration.json`.
 ```shell
 cd $root/webreloader
-cp config.template.json config.json
+cp configuration.template.json configuration.json
 ```
 Each node in the config file represents a **mirror**. Each **mirror** can be described with the following information:
 - Mandatory
 	- The __TARGET__: The key used as parameter to identify the mirror to load.
 	- The __URL__ to be proxied.
 - Optional
-	- The __BASE_DIRECTORY__ (`dir`) represents the relative path to the base directory to watch. 
+	- The __BASE_DIRECTORY__ (`directory`) represents the relative path to the base directory to watch. 
 		- It is relative to the **root**.
 		- The **root** is the **parent directory** of the **webreloader**.
 		- If unset the **root** itself will be used.

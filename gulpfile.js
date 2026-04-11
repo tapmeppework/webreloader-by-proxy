@@ -12,7 +12,7 @@ const
 
 // configuration
 const
-	file = 'config.json',
+	file = 'configuration.json',
 	path0 = path.resolve(__dirname, file)
 if (fs.statSync(path0).isFile()) {
 	const
@@ -42,8 +42,8 @@ if (fs.statSync(path0).isFile()) {
 			// @see https://browsersync.io/docs/options
 			// @see https://browsersync.io/docs/options#option-proxy
 			browserSync.init({
-				port: config.port || 9033,
-				proxy: config.url,
+				port: configuration.port || 9033,
+				proxy: configuration.url,
 			})
 			// @see https://gulpjs.com/docs/en/api/watch
 			watch(
@@ -63,7 +63,7 @@ if (fs.statSync(path0).isFile()) {
 					'!*.css.map',
 					'!*.sql',
 				],
-				{ cwd: config.dir }
+				{ cwd: configuration.dir }
 			).on('change', browserSync.reload)
 
 			cb()
