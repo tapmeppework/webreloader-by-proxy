@@ -7,8 +7,8 @@
  * @see https://browsersync.io/docs/gulp alternative with gulp
  */
 const
-	path = require('node:path'),
-	fs = require('node:fs'),
+	fs = require('fs'),
+	path = require('path'),
 	browserSync = require('browser-sync').create()
 
 // configuration
@@ -16,7 +16,7 @@ const
 	file = 'config.json',
 	root = path.dirname(__dirname),
 	path0 = path.resolve(__dirname, file),
-	thys = __dirname.replace(/\\/g, '/')
+	self = __dirname.replace(/\\/g, '/')
 if (fs.statSync(path0).isFile()) {
 	const configuration = JSON.parse(fs.readFileSync(path0, 'utf8'))
 	let [, , target] = process.argv
@@ -38,7 +38,7 @@ if (fs.statSync(path0).isFile()) {
 		const configuration = {
 			logPrefix: target,
 			proxy: config.url,
-			// cwd: config.dir, //TODO remove - used during the initial development
+			// cwd: config.dir, // TODO remove - used during the initial development
 			cwd: path.resolve(root, config.dir ?? ''),
 			// port: config.port || 9033, // Using a custom port leads to an unpleasant delay between switches
 			files: [
@@ -67,7 +67,7 @@ if (fs.statSync(path0).isFile()) {
 				...(config.files ?? []),
 			],
 			ignore: [
-				`${thys}/*`,
+				`${self}/*`,
 				// '*.css.map',
 				// '*.less',
 				// '*.log',
@@ -100,8 +100,8 @@ if (fs.statSync(path0).isFile()) {
 				browserSync.cleanup()
 				browserSync.reload()
 			}
-			configuration.open = false //prevent a new tab from being open during the next initiation
-		} while (end - start > 2000) //If delta is higher than 2sec then it is most likely a time out error.
+			configuration.open = false // Prevent a new tab from being open during the next initiation.
+		} while (end - start > 2000) // If delta is higher than 2sec then it is most likely a time out error.
 		// ...
 		if (error) {
 			if (error instanceof Error) throw error
