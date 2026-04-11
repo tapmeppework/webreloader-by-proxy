@@ -4,21 +4,34 @@
 /configuration.json
 
 # miscellaneous
-.DS_Store*
-ehthumbs.db
-Thumbs.db
-desktop.ini
+*.backup
+*.backup.*
+*.ignore
+*.ignore.*
 *.lnk
-*.pem
+*.local
+*.local.*
 *.log
-.grunt
+*.pem
+# ...
+.DS_Store*
 .env
+.github
+!.gitkeep
+# ...
+composer.lock
+desktop.ini
+ehthumbs.db
+package-lock.json
+Thumbs.db
+# ...
 /.vscode/*
 !/.vscode/*.json
-# .github
-build
+# !/.vscode/spellright.dict
+# ...
 dist
 node_modules
+stories
 vendor
-package-lock.json
-composer.lock
+# ...
+/zyxw
