@@ -55,6 +55,7 @@ if "%1" EQU "configuration" (
 if "%1" EQU "pull" (
 	echo [36mtapmeppe work - PULL[0m
 	git reset --hard HEAD && git clean -fd && git pull
+	npm install
 	goto :eof
 )
 

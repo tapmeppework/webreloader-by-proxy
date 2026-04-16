@@ -1,6 +1,6 @@
 {
 	"name": "@tapmeppe/webreloader-by-proxy",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "This project can be used to hot-reload any non static web application during the development stage. For example applications written in PHP such as WordPress, Joomla and PrestaShop.",
   "main": "starter.js",
   "scripts": {
