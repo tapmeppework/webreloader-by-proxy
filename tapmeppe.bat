@@ -1,5 +1,5 @@
 @echo off
-@REM @since PM (13.05.2024) This script is used to synchronise the code & database between local & remote environments.
+@REM @since PM (13.05.2024) This script is used to run convinient processes.
 @REM testing
 @REM WIN + R ++ cmd OR WIN ++ cmd
 @REM ...
@@ -49,6 +49,12 @@ if "%1" EQU "configuration" (
 		@REM the configuration file exists already
 		code configuration.json
 	)
+	goto :eof
+)
+
+if "%1" EQU "pull" (
+	echo [36mtapmeppe work - PULL[0m
+	git reset --hard HEAD && git clean -fd && git pull
 	goto :eof
 )
 
