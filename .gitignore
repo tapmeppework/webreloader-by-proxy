@@ -19,10 +19,8 @@
 .github
 !.gitkeep
 # ...
-composer.lock
 desktop.ini
 ehthumbs.db
-package-lock.json
 Thumbs.db
 # ...
 /.vscode/*
@@ -31,7 +29,7 @@ Thumbs.db
 # ...
 dist
 node_modules
-stories
+resources
 vendor
 # ...
 /zyxw
