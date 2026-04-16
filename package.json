@@ -4,6 +4,7 @@
   "description": "This project can be used to hot-reload any non static web application during the development stage. For example applications written in PHP such as WordPress, Joomla and PrestaShop.",
   "main": "starter.js",
   "scripts": {
+    "build": "echo \"NOT IMPLEMENTED❗\"",
     "dev": "cls && node starter.js",
 		"start": "node starter.js",
 		"test": "cls && npx gulp"
