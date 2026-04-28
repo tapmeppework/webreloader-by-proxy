@@ -35,19 +35,19 @@ First some definitions.
 3. Download the repository by running the following commands:
 	 1. If the **root** is already a GIT repository.
 			```shell
-			git submodule add -- https://github.com/tapmeppe/webreloader-by-proxy.git webreloader
+			git submodule add -- https://github.com/tapmeppework/webreloader-by-proxy.git webreloader
 			cd webreloader
 			npm install
 			```
 	 2. Otherwise
 			```shell
-			git clone https://github.com/tapmeppe/webreloader-by-proxy.git webreloader
+			git clone https://github.com/tapmeppework/webreloader-by-proxy.git webreloader
 			cd webreloader
 			npm install
 			```
 
 ### Manually
-1. [Download the webreloader project as a .zip file](https://github.com/tapmeppe/webreloader-by-proxy/archive/refs/heads/main.zip).
+1. [Download the webreloader project as a .zip file](https://github.com/tapmeppework/webreloader-by-proxy/archive/refs/heads/main.zip).
 2. Extract the .zip file. The result will be a single **non-empty** folder.
 3. Rename the newly created folder to '**webreloader**'.
 4. Move the folder *webreloader/* to the **root**. Meaning place it directly under the **root**.
