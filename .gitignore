@@ -18,6 +18,7 @@
 .env
 .github
 !.gitkeep
+.php-*
 # ...
 desktop.ini
 ehthumbs.db
